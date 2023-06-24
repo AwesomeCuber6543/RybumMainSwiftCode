@@ -13,17 +13,18 @@ class CustomTextField: UITextField {
         case username
         case email
         case password
+        case friends
     }
     
     private let authFieldType: CustomTextFieldType
     
-    init(fieldType: CustomTextFieldType) {
+    init(fieldType: CustomTextFieldType, borderWidth: CGFloat = 0) {
         self.authFieldType = fieldType
         super.init(frame: .zero)
         
         self.backgroundColor = UIColor(cgColor: CGColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 0.2))
         //self.layer.cornerRadius = 10
-        self.layer.borderWidth = 2
+        self.layer.borderWidth = borderWidth
         //self.layer.borderColor = CGColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
         self.layer.borderColor = CGColor(red: 255/255, green: 65/255, blue: 54/255, alpha: 1)
         self.layer.cornerRadius = 10
@@ -59,6 +60,11 @@ class CustomTextField: UITextField {
                     string: "Password",
                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
                     )
+        case .friends:
+            self.attributedPlaceholder = NSAttributedString(
+            string: "Add Friends",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+            )
         }
         
         

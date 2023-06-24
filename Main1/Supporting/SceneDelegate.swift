@@ -38,24 +38,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.makeKeyAndVisible()
     }
     public func checkAuthentication() {
-        let tempVC = MainTabBarViewController()
-        tempVC.modalPresentationStyle = .fullScreen
-        self.window?.rootViewController = tempVC
-//        DataService.getData { [weak self] result in
-//
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .success(_):
-//                    //self?.goToController(with: ProfileViewController(dataArray: dataArray))
-//                    let tempVC = MainTabBarViewController()
-//                    tempVC.modalPresentationStyle = .fullScreen
-//                    self?.window?.rootViewController = tempVC
-//                case .failure(_):
-//                    self?.goToController(with: LoginPageViewController())
-//                }
-//            }
-//
-//        }
+//        let tempVC = MainTabBarViewController()
+//        tempVC.modalPresentationStyle = .fullScreen
+//        self.window?.rootViewController = tempVC
+        DataService.getData { [weak self] result in
+
+            DispatchQueue.main.async {
+                switch result {
+                case .success(_):
+                    //self?.goToController(with: ProfileViewController(dataArray: dataArray))
+                    let tempVC = MainTabBarViewController()
+                    tempVC.modalPresentationStyle = .fullScreen
+                    self?.window?.rootViewController = tempVC
+                case .failure(_):
+                    self?.goToController(with: LoginPageViewController())
+                }
+            }
+
+        }
     }
     
     private func goToController(with viewController: UIViewController) {
