@@ -155,9 +155,37 @@ class RegisterViewController: UIViewController {
                 
                 switch result {
                 case .success(_):
+                    let baseImage = UIImage(named: "rybumskinnylogo")
+                    let imageData = baseImage!.jpegData(compressionQuality: 0.1)
+                    let strBase64 = imageData!.base64EncodedString()
+                    let userRequest = SendProfilePicRequest(profilepic: strBase64)
+                    
+                    guard let request = Endpoint.setImage(userRequest: userRequest).request else {return}
+                    
+                    AuthService.fetch(request: request) { [weak self] result in
+                        
+                        DispatchQueue.main.async {
+                            switch result {
+                            case .success(_):
+                                break
+                            case .failure(let error):
+                                guard let error = error as? ServiceError else { return }
+                                
+                                switch error {
+                                case .serverError(let string),
+                                        .unkown(let string),
+                                        .decodingError(let string):
+                                    AlertManager.showSignInErrorAlert(on: self!, with: string)
+                                }
+                            }
+                            
+                        }
+                        
+                    }
                     if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
                         sceneDelegate.checkAuthentication()
                     }
+                    
                 case .failure(let error):
                     guard let error = error as? ServiceError else { return }
                     

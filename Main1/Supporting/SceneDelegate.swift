@@ -27,7 +27,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        //window?.rootViewController = MainTabBarViewController()
 //        window?.makeKeyAndVisible()
         self.setupWindow(with: scene)
+        print("hi")
         self.checkAuthentication()
+        print("bye")
     }
    
     
@@ -45,8 +47,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
             DispatchQueue.main.async {
                 switch result {
-                case .success(_):
-                    //self?.goToController(with: ProfileViewController(dataArray: dataArray))
+                case .success(let dataArray):
+//                    self?.goToController(with: ProfileViewController(dataArray: dataArray))
                     let tempVC = MainTabBarViewController()
                     tempVC.modalPresentationStyle = .fullScreen
                     self?.window?.rootViewController = tempVC

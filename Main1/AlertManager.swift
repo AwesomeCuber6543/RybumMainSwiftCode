@@ -103,3 +103,18 @@ extension AlertManager{
     }
     
 }
+
+//Friend Request Errors
+extension AlertManager {
+    
+    public static func showFriendRequestError(on vc: UIViewController) {
+        self.showBasicAlert(on: vc, title: "Error Sending Friend Request", message: nil)
+    }
+    
+    public static func showFriendRequestError(on vc: UIViewController, with error: String) {
+        self.showBasicAlert(on: vc, title: "Error Sending Friend Request", message: "\(error)")
+    }
+    
+    
+    
+}

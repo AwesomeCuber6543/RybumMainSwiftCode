@@ -29,6 +29,7 @@
 		443CAEAF2A46534A0029A940 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEAE2A46534A0029A940 /* AdminViewController.swift */; };
 		443CAEB12A4659800029A940 /* EmailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEB02A4659800029A940 /* EmailService.swift */; };
 		443CAEB32A46A9AA0029A940 /* EmailArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEB22A46A9AA0029A940 /* EmailArray.swift */; };
+		443CAEB52A4A4D680029A940 /* FriendRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEB42A4A4D680029A940 /* FriendRequestRequest.swift */; };
 		44F44CDE29F99DC60046730E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CDD29F99DC60046730E /* AppDelegate.swift */; };
 		44F44CE029F99DC60046730E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CDF29F99DC60046730E /* SceneDelegate.swift */; };
 		44F44CE229F99DC60046730E /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CE129F99DC60046730E /* MainTabBarViewController.swift */; };
@@ -76,6 +77,7 @@
 		443CAEAE2A46534A0029A940 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		443CAEB02A4659800029A940 /* EmailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailService.swift; sourceTree = "<group>"; };
 		443CAEB22A46A9AA0029A940 /* EmailArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailArray.swift; sourceTree = "<group>"; };
+		443CAEB42A4A4D680029A940 /* FriendRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestRequest.swift; sourceTree = "<group>"; };
 		44F44CDA29F99DC60046730E /* Main1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F44CDD29F99DC60046730E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44F44CDF29F99DC60046730E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				443CAE8E2A37EF4A0029A940 /* RegisterUserRequest.swift */,
+				443CAEB42A4A4D680029A940 /* FriendRequestRequest.swift */,
 				443CAE982A38BFFC0029A940 /* SignInUserRequest.swift */,
 				443CAE9C2A40C6B10029A940 /* SendDataRequest.swift */,
 				443CAEA42A43AF300029A940 /* SendProfilePicRequest.swift */,
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				443CAEB52A4A4D680029A940 /* FriendRequestRequest.swift in Sources */,
 				44F44CF729F9A1A40046730E /* ProfileViewController.swift in Sources */,
 				44F44CE229F99DC60046730E /* MainTabBarViewController.swift in Sources */,
 				44F44D212A021DA20046730E /* CustomButton.swift in Sources */,

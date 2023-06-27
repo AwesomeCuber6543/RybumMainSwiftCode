@@ -61,11 +61,37 @@ class FriendsViewController: UIViewController {
     }
     
     @objc func didTapAddFriend() {
-        self.friendLabel.textColor = .green
-        self.friendLabel.text = "added friend"
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.friendLabel.text = nil
+        let userRequest = FriendRequestRequest(friendsusername: self.addFriendsField.text ?? "")
+        
+        print(userRequest.friendsusername)
+        guard let request = Endpoint.requestFriend(userRequest: userRequest).request else {return}
+        
+        AuthService.fetch(request: request) { [weak self] result in
+            
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                
+                switch result {
+                case .success(_):
+                    self.friendLabel.textColor = .green
+                    self.friendLabel.text = "added friend"
+                case .failure(let error):
+                    guard let error = error as? ServiceError else { return }
+                    
+                    switch error {
+                    case .serverError(let string),
+                            .unkown(let string),
+                            .decodingError(let string):
+                        AlertManager.showFriendRequestError(on: self, with: string)
+                    }
+                }
+                
+            }
+            
+            
         }
+        
+        
     }
 
 }
