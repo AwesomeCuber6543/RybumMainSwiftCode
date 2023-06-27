@@ -115,6 +115,10 @@ extension AlertManager {
         self.showBasicAlert(on: vc, title: "Error Sending Friend Request", message: "\(error)")
     }
     
+    public static func getFriendRequestError(with error: String) -> String {
+        return error
+    }
+    
     
     
 }

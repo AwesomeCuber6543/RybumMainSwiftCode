@@ -74,7 +74,7 @@ class FriendsViewController: UIViewController {
                 switch result {
                 case .success(_):
                     self.friendLabel.textColor = .green
-                    self.friendLabel.text = "added friend"
+                    self.friendLabel.text = "sent friend request"
                 case .failure(let error):
                     guard let error = error as? ServiceError else { return }
                     
@@ -82,7 +82,10 @@ class FriendsViewController: UIViewController {
                     case .serverError(let string),
                             .unkown(let string),
                             .decodingError(let string):
-                        AlertManager.showFriendRequestError(on: self, with: string)
+//                        AlertManager.showFriendRequestError(on: self, with: string)
+                        self.friendLabel.text = ""
+                        self.friendLabel.textColor = .systemRed
+                        self.friendLabel.text = AlertManager.getFriendRequestError(with: string)
                     }
                 }
                 

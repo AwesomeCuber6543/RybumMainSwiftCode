@@ -177,6 +177,8 @@ class TrialProfileViewController: UIViewController {
         self.blurView.translatesAutoresizingMaskIntoConstraints = false
         self.settingsButton.translatesAutoresizingMaskIntoConstraints = false
         
+        self.view.bringSubviewToFront(friendsButton)
+        self.view.bringSubviewToFront(settingsButton)
         self.view.sendSubviewToBack(imageView)
         self.view.sendSubviewToBack(blurView)
         self.view.sendSubviewToBack(backgroundImageView)

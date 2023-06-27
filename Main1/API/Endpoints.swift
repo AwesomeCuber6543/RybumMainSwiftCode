@@ -20,6 +20,7 @@ enum Endpoint {
     case setData(path: String = "/data/set-data", userRequest: SendDataRequest)
     case setImage(path: String = "/data/set-image", userRequest: SendProfilePicRequest)
     case requestFriend(path: String = "/data/request-friend", userRequest: FriendRequestRequest)
+    case getFriendRequests(path: String = "/data/get-friendrequests")
     
     var request: URLRequest? {
         guard let url = self.url else {return nil}
@@ -51,7 +52,8 @@ enum Endpoint {
                 .getEmail(let path),
                 .setData(let path, _),
                 .setImage(let path, _),
-                .requestFriend(let path, _):
+                .requestFriend(let path, _),
+                .getFriendRequests(let path):
             return path
         }
     }
@@ -68,7 +70,8 @@ enum Endpoint {
         case .getData,
                 .getImage,
                 .getUsername,
-                .getEmail:
+                .getEmail,
+                .getFriendRequests:
             return HTTP.Method.get.rawValue
         }
     }
@@ -97,6 +100,8 @@ enum Endpoint {
             return nil
         case .getEmail:
             return nil
+        case .getFriendRequests:
+            return nil
         }
     
         
@@ -115,7 +120,8 @@ extension URLRequest {
                 .setImage,
                 .getUsername,
                 .getEmail,
-                .requestFriend:
+                .requestFriend,
+                .getFriendRequests:
             self.setValue(HTTP.Headers.Value.applicationJson.rawValue, forHTTPHeaderField: HTTP.Headers.Key.contentType.rawValue)
         }
         
