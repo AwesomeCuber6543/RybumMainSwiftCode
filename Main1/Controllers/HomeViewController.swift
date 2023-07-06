@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
-        homeFeedTable.backgroundColor = UIColor(red: 41/255, green: 37/255, blue: 44/255, alpha: 1)
+//        homeFeedTable.backgroundColor = UIColor(red: 41/255, green: 37/255, blue: 44/255, alpha: 1)
         
     }
     
@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{

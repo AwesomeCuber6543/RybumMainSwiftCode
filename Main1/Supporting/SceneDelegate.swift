@@ -49,29 +49,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 switch result {
                 case .success(_):
 //                    self?.goToController(with: ProfileViewController(dataArray: dataArray))
-                    DispatchQueue.main.async { [weak self] in
-                        UIView.animate(withDuration: 0.25) {
-                            self?.window?.layer.opacity = 0
-                        } completion: { [weak self] _ in
-                            let nav = UINavigationController(rootViewController: MainTabBarViewController())
-                            nav.modalPresentationStyle = .fullScreen
-                            self?.window?.rootViewController = nav
-                            
-                            UIView.animate(withDuration: 0.25) { [weak self] in
-                                self?.window?.layer.opacity = 1
-                                
-                            }
-                        }
-                        
-                    }
-//                    let tempVC = MainTabBarViewController()
-//                    tempVC.modalPresentationStyle = .fullScreen
-//                    self?.window?.rootViewController = tempVC
+//                    DispatchQueue.main.async { [weak self] in
+//                        UIView.animate(withDuration: 0.25) {
+//                            self?.window?.layer.opacity = 0
+//                        } completion: { [weak self] _ in
+//                            let nav = UINavigationController(rootViewController: MainTabBarViewController())
+//                            nav.modalPresentationStyle = .fullScreen
+//                            self?.window?.rootViewController = nav
+//
+//                            UIView.animate(withDuration: 0.25) { [weak self] in
+//                                self?.window?.layer.opacity = 1
+//
+//                            }
+//                        }
+//
+//                    }
+                    let tempVC = MainTabBarViewController()
+                    tempVC.modalPresentationStyle = .fullScreen
+                    self?.window?.rootViewController = tempVC
                 case .failure(_):
                     self?.goToController(with: LoginPageViewController())
                 }
             }
-
         }
     }
     

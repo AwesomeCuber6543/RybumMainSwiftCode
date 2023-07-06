@@ -151,7 +151,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 //            print("hi")
 //        }
         if(indexPath.section == 0 && indexPath.row == 1) {
-            let svc = HomeLoginViewController()
+            let svc = ConnectionsViewController()
             //present(svc, animated: true, completion: nil)
             self.navigationController?.pushViewController(svc, animated: true)
         }

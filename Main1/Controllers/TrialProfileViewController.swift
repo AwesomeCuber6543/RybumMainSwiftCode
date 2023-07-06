@@ -11,6 +11,8 @@ class TrialProfileViewController: UIViewController {
 
 //    private let addPhotoButton = CustomButton(title: "Select Photo", fontsize: .med, buttonColor: .systemRed)
     
+    
+    
     private let addPhotoButton: UIButton = {
         let addPhotoButton = UIButton()
         addPhotoButton.backgroundColor = .white
@@ -59,13 +61,15 @@ class TrialProfileViewController: UIViewController {
     private let imageView : UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: -100, y: -50, width: 2600, height: 2600))
         //imageView.layer.cornerRadius = imageView.frame.size.height/2
-        imageView.image = UIImage(named: "rybumskinnylogo")
+//        imageView.image = UIImage(named: "rybumskinnylogo")
+        imageView.image = nil
         return imageView
     }()
     
     private let backgroundImageView : UIImageView = {
         let backgroundImageView = UIImageView(frame: CGRect(x: -100, y: -50, width: 2600, height: 2600))
-        backgroundImageView.image = UIImage(named: "rybumskinnylogo")
+//        backgroundImageView.image = UIImage(named: "rybumskinnylogo")
+        backgroundImageView.image = nil
         return backgroundImageView
     }()
 
@@ -146,7 +150,9 @@ class TrialProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = false
+//        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.isNavigationBarHidden = true
+        
         self.setupUI()
         self.addPhotoButton.addTarget(self, action: #selector(didTapAddPhoto), for: .touchUpInside)
         self.settingsButton.addTarget(self, action: #selector(didTapSettingsButton), for: .touchUpInside)
@@ -263,6 +269,10 @@ class TrialProfileViewController: UIViewController {
 //            self.settingsButton.centerXAnchor.constraint(equalTo: self.imageView.centerXAnchor, constant: 45),
             self.settingsButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20),
             self.settingsButton.centerYAnchor.constraint(equalTo: self.imageView.centerYAnchor, constant: -40),
+            
+//            self.settingsButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            self.settingsButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+
             
             self.friendsButton.widthAnchor.constraint(equalToConstant: 45),
             self.friendsButton.heightAnchor.constraint(equalToConstant: 25),

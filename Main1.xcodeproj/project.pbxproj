@@ -32,6 +32,11 @@
 		443CAEB52A4A4D680029A940 /* FriendRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEB42A4A4D680029A940 /* FriendRequestRequest.swift */; };
 		443CAEB72A4A898A0029A940 /* FriendRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEB62A4A898A0029A940 /* FriendRequestService.swift */; };
 		443CAEB92A4A89C70029A940 /* FriendRequestArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEB82A4A89C70029A940 /* FriendRequestArray.swift */; };
+		443CAEBB2A54E1FE0029A940 /* FriendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEBA2A54E1FE0029A940 /* FriendsService.swift */; };
+		443CAEBD2A54E2200029A940 /* FriendsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEBC2A54E2200029A940 /* FriendsArray.swift */; };
+		443CAEBF2A5610250029A940 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEBE2A5610250029A940 /* FriendsTableViewCell.swift */; };
+		443CAEC32A5657960029A940 /* FriendProfPicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEC22A5657960029A940 /* FriendProfPicRequest.swift */; };
+		443CAEC52A565E1B0029A940 /* FriendProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEC42A565E1B0029A940 /* FriendProfileService.swift */; };
 		44F44CDE29F99DC60046730E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CDD29F99DC60046730E /* AppDelegate.swift */; };
 		44F44CE029F99DC60046730E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CDF29F99DC60046730E /* SceneDelegate.swift */; };
 		44F44CE229F99DC60046730E /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CE129F99DC60046730E /* MainTabBarViewController.swift */; };
@@ -82,6 +87,11 @@
 		443CAEB42A4A4D680029A940 /* FriendRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestRequest.swift; sourceTree = "<group>"; };
 		443CAEB62A4A898A0029A940 /* FriendRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestService.swift; sourceTree = "<group>"; };
 		443CAEB82A4A89C70029A940 /* FriendRequestArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestArray.swift; sourceTree = "<group>"; };
+		443CAEBA2A54E1FE0029A940 /* FriendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsService.swift; sourceTree = "<group>"; };
+		443CAEBC2A54E2200029A940 /* FriendsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsArray.swift; sourceTree = "<group>"; };
+		443CAEBE2A5610250029A940 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		443CAEC22A5657960029A940 /* FriendProfPicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfPicRequest.swift; sourceTree = "<group>"; };
+		443CAEC42A565E1B0029A940 /* FriendProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileService.swift; sourceTree = "<group>"; };
 		44F44CDA29F99DC60046730E /* Main1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F44CDD29F99DC60046730E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44F44CDF29F99DC60046730E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +140,8 @@
 				443CAEAA2A45626E0029A940 /* UsernameService.swift */,
 				443CAEB02A4659800029A940 /* EmailService.swift */,
 				443CAEB62A4A898A0029A940 /* FriendRequestService.swift */,
+				443CAEBA2A54E1FE0029A940 /* FriendsService.swift */,
+				443CAEC42A565E1B0029A940 /* FriendProfileService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -192,6 +204,7 @@
 				44F44CFF29F9D3B10046730E /* CollectionViewTableViewCell.swift */,
 				44F44D0729FB266D0046730E /* SettingsTableViewCell.swift */,
 				44F44D0B29FC512A0046730E /* MainImageTableViewCell.swift */,
+				443CAEBE2A5610250029A940 /* FriendsTableViewCell.swift */,
 				44F44D1C2A0197430046730E /* AuthHeaderView.swift */,
 				44F44D1E2A01AE460046730E /* CustomTextField.swift */,
 				44F44D202A021DA20046730E /* CustomButton.swift */,
@@ -204,6 +217,7 @@
 			children = (
 				443CAE8E2A37EF4A0029A940 /* RegisterUserRequest.swift */,
 				443CAEB42A4A4D680029A940 /* FriendRequestRequest.swift */,
+				443CAEC22A5657960029A940 /* FriendProfPicRequest.swift */,
 				443CAE982A38BFFC0029A940 /* SignInUserRequest.swift */,
 				443CAE9C2A40C6B10029A940 /* SendDataRequest.swift */,
 				443CAEA42A43AF300029A940 /* SendProfilePicRequest.swift */,
@@ -214,6 +228,7 @@
 				443CAEB22A46A9AA0029A940 /* EmailArray.swift */,
 				443CAEB82A4A89C70029A940 /* FriendRequestArray.swift */,
 				443CAEAC2A4651D50029A940 /* IsAdmin.swift */,
+				443CAEBC2A54E2200029A940 /* FriendsArray.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -303,6 +318,7 @@
 				443CAEB52A4A4D680029A940 /* FriendRequestRequest.swift in Sources */,
 				44F44CF729F9A1A40046730E /* ProfileViewController.swift in Sources */,
 				44F44CE229F99DC60046730E /* MainTabBarViewController.swift in Sources */,
+				443CAEBF2A5610250029A940 /* FriendsTableViewCell.swift in Sources */,
 				44F44D212A021DA20046730E /* CustomButton.swift in Sources */,
 				44F44D0029F9D3B10046730E /* CollectionViewTableViewCell.swift in Sources */,
 				443CAE972A38B5AE0029A940 /* DataArray.swift in Sources */,
@@ -318,6 +334,7 @@
 				443CAEA12A42B59E0029A940 /* ImageService.swift in Sources */,
 				44F44D1B2A0195CC0046730E /* HomeLoginViewController.swift in Sources */,
 				443CAEAB2A45626E0029A940 /* UsernameService.swift in Sources */,
+				443CAEC52A565E1B0029A940 /* FriendProfileService.swift in Sources */,
 				44F44CE029F99DC60046730E /* SceneDelegate.swift in Sources */,
 				443CAEB12A4659800029A940 /* EmailService.swift in Sources */,
 				443CAEAD2A4651D50029A940 /* IsAdmin.swift in Sources */,
@@ -325,6 +342,7 @@
 				443CAE912A37F0590029A940 /* ServerResponses.swift in Sources */,
 				443CAEB72A4A898A0029A940 /* FriendRequestService.swift in Sources */,
 				44F44D1F2A01AE460046730E /* CustomTextField.swift in Sources */,
+				443CAEBD2A54E2200029A940 /* FriendsArray.swift in Sources */,
 				443CAE952A38B5400029A940 /* DataService.swift in Sources */,
 				443CAE9B2A3917D50029A940 /* ConnectionsViewController.swift in Sources */,
 				44F44CF529F9A18C0046730E /* FriendsViewController.swift in Sources */,
@@ -334,7 +352,9 @@
 				44F44D0829FB266D0046730E /* SettingsTableViewCell.swift in Sources */,
 				443CAEAF2A46534A0029A940 /* AdminViewController.swift in Sources */,
 				443CAEA32A439A7C0029A940 /* ProfilePicsArray.swift in Sources */,
+				443CAEC32A5657960029A940 /* FriendProfPicRequest.swift in Sources */,
 				44F44D142A0184FC0046730E /* LoginPageViewController.swift in Sources */,
+				443CAEBB2A54E1FE0029A940 /* FriendsService.swift in Sources */,
 				443CAEA92A4561FA0029A940 /* UsernameArray.swift in Sources */,
 				443CAE932A38AE2D0029A940 /* AuthService.swift in Sources */,
 				44F44D172A0195A50046730E /* RegisterViewController.swift in Sources */,

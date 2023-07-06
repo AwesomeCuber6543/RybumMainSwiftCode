@@ -116,7 +116,8 @@ class RegisterViewController: UIViewController {
             self.termsTextView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
             self.termsTextView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier:  0.85),
             
-            self.signInButton.topAnchor.constraint(equalTo: termsTextView.bottomAnchor, constant: 225),
+//            self.signInButton.topAnchor.constraint(equalTo: termsTextView.bottomAnchor, constant: 225),
+            self.signInButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 100),
             self.signInButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
             self.signInButton.heightAnchor.constraint(equalToConstant: 44),
             self.signInButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier:  0.85)

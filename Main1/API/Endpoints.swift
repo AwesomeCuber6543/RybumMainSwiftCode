@@ -21,6 +21,8 @@ enum Endpoint {
     case setImage(path: String = "/data/set-image", userRequest: SendProfilePicRequest)
     case requestFriend(path: String = "/data/request-friend", userRequest: FriendRequestRequest)
     case getFriendRequests(path: String = "/data/get-friendrequests")
+    case getFriends(path: String = "/data/get-friends")
+    case getImageFromUsername(path: String = "/data/get-imagefromusername", userRequest: FriendProfPicRequest)
     
     var request: URLRequest? {
         guard let url = self.url else {return nil}
@@ -53,7 +55,9 @@ enum Endpoint {
                 .setData(let path, _),
                 .setImage(let path, _),
                 .requestFriend(let path, _),
-                .getFriendRequests(let path):
+                .getFriendRequests(let path),
+                .getFriends(let path),
+                .getImageFromUsername(let path, _):
             return path
         }
     }
@@ -65,13 +69,15 @@ enum Endpoint {
                 .forgotPassword,
                 .setData,
                 .setImage,
-                .requestFriend:
+                .requestFriend,
+                .getImageFromUsername:
             return HTTP.Method.post.rawValue
         case .getData,
                 .getImage,
                 .getUsername,
                 .getEmail,
-                .getFriendRequests:
+                .getFriendRequests,
+                .getFriends:
             return HTTP.Method.get.rawValue
         }
     }
@@ -98,9 +104,13 @@ enum Endpoint {
             return try? JSONEncoder().encode(userRequest)
         case .getUsername:
             return nil
+        case .getImageFromUsername(_, let userRequest):
+            return try? JSONEncoder().encode(userRequest)
         case .getEmail:
             return nil
         case .getFriendRequests:
+            return nil
+        case .getFriends:
             return nil
         }
     
@@ -121,7 +131,9 @@ extension URLRequest {
                 .getUsername,
                 .getEmail,
                 .requestFriend,
-                .getFriendRequests:
+                .getFriendRequests,
+                .getFriends,
+                .getImageFromUsername:
             self.setValue(HTTP.Headers.Value.applicationJson.rawValue, forHTTPHeaderField: HTTP.Headers.Key.contentType.rawValue)
         }
         
