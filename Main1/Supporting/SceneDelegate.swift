@@ -27,9 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        //window?.rootViewController = MainTabBarViewController()
 //        window?.makeKeyAndVisible()
         self.setupWindow(with: scene)
-        print("hi")
         self.checkAuthentication()
-        print("bye")
     }
    
     

@@ -23,6 +23,7 @@ enum Endpoint {
     case getFriendRequests(path: String = "/data/get-friendrequests")
     case getFriends(path: String = "/data/get-friends")
     case getImageFromUsername(path: String = "/data/get-imagefromusername", userRequest: FriendProfPicRequest)
+    case deleteFriend(path: String = "/data/delete-friend", userRequest: DeleteFriendRequest)
     
     var request: URLRequest? {
         guard let url = self.url else {return nil}
@@ -57,7 +58,8 @@ enum Endpoint {
                 .requestFriend(let path, _),
                 .getFriendRequests(let path),
                 .getFriends(let path),
-                .getImageFromUsername(let path, _):
+                .getImageFromUsername(let path, _),
+                .deleteFriend(let path, _):
             return path
         }
     }
@@ -70,7 +72,8 @@ enum Endpoint {
                 .setData,
                 .setImage,
                 .requestFriend,
-                .getImageFromUsername:
+                .getImageFromUsername,
+                .deleteFriend:
             return HTTP.Method.post.rawValue
         case .getData,
                 .getImage,
@@ -95,6 +98,8 @@ enum Endpoint {
         case .getData:
             return nil
         case .requestFriend(_, let userRequest):
+            return try? JSONEncoder().encode(userRequest)
+        case .deleteFriend(_, let userRequest):
             return try? JSONEncoder().encode(userRequest)
         case .getImage:
             return nil
@@ -133,7 +138,8 @@ extension URLRequest {
                 .requestFriend,
                 .getFriendRequests,
                 .getFriends,
-                .getImageFromUsername:
+                .getImageFromUsername,
+                .deleteFriend:
             self.setValue(HTTP.Headers.Value.applicationJson.rawValue, forHTTPHeaderField: HTTP.Headers.Key.contentType.rawValue)
         }
         

@@ -8,9 +8,9 @@
 import Foundation
 
 class FriendRequestService {
-    static func getFriendRequest(completion: @escaping (Result<EmailArray, Error>) -> Void) {
+    static func getFriendRequest(completion: @escaping (Result<FriendRequestArray, Error>) -> Void) {
         
-        guard let request = Endpoint.getEmail().request else { return }
+        guard let request = Endpoint.getFriendRequests().request else { return }
         
         URLSession.shared.dataTask(with: request) { data, _, error in
             guard let friendRequests = data else {
@@ -25,7 +25,7 @@ class FriendRequestService {
             
             let decoder = JSONDecoder()
             
-            if let array = try? decoder.decode(EmailArray.self, from: friendRequests) {
+            if let array = try? decoder.decode(FriendRequestArray.self, from: friendRequests) {
                 completion(.success(array))
                 return
             }

@@ -37,6 +37,7 @@
 		443CAEBF2A5610250029A940 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEBE2A5610250029A940 /* FriendsTableViewCell.swift */; };
 		443CAEC32A5657960029A940 /* FriendProfPicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEC22A5657960029A940 /* FriendProfPicRequest.swift */; };
 		443CAEC52A565E1B0029A940 /* FriendProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEC42A565E1B0029A940 /* FriendProfileService.swift */; };
+		443CAEC72A58E79F0029A940 /* DeleteFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEC62A58E79F0029A940 /* DeleteFriendRequest.swift */; };
 		44F44CDE29F99DC60046730E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CDD29F99DC60046730E /* AppDelegate.swift */; };
 		44F44CE029F99DC60046730E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CDF29F99DC60046730E /* SceneDelegate.swift */; };
 		44F44CE229F99DC60046730E /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CE129F99DC60046730E /* MainTabBarViewController.swift */; };
@@ -92,6 +93,7 @@
 		443CAEBE2A5610250029A940 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		443CAEC22A5657960029A940 /* FriendProfPicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfPicRequest.swift; sourceTree = "<group>"; };
 		443CAEC42A565E1B0029A940 /* FriendProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileService.swift; sourceTree = "<group>"; };
+		443CAEC62A58E79F0029A940 /* DeleteFriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFriendRequest.swift; sourceTree = "<group>"; };
 		44F44CDA29F99DC60046730E /* Main1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F44CDD29F99DC60046730E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44F44CDF29F99DC60046730E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				443CAE8E2A37EF4A0029A940 /* RegisterUserRequest.swift */,
 				443CAEB42A4A4D680029A940 /* FriendRequestRequest.swift */,
+				443CAEC62A58E79F0029A940 /* DeleteFriendRequest.swift */,
 				443CAEC22A5657960029A940 /* FriendProfPicRequest.swift */,
 				443CAE982A38BFFC0029A940 /* SignInUserRequest.swift */,
 				443CAE9C2A40C6B10029A940 /* SendDataRequest.swift */,
@@ -344,6 +347,7 @@
 				44F44D1F2A01AE460046730E /* CustomTextField.swift in Sources */,
 				443CAEBD2A54E2200029A940 /* FriendsArray.swift in Sources */,
 				443CAE952A38B5400029A940 /* DataService.swift in Sources */,
+				443CAEC72A58E79F0029A940 /* DeleteFriendRequest.swift in Sources */,
 				443CAE9B2A3917D50029A940 /* ConnectionsViewController.swift in Sources */,
 				44F44CF529F9A18C0046730E /* FriendsViewController.swift in Sources */,
 				44F44CF329F9A13E0046730E /* HomeViewController.swift in Sources */,
