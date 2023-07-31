@@ -38,6 +38,8 @@
 		443CAEC32A5657960029A940 /* FriendProfPicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEC22A5657960029A940 /* FriendProfPicRequest.swift */; };
 		443CAEC52A565E1B0029A940 /* FriendProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEC42A565E1B0029A940 /* FriendProfileService.swift */; };
 		443CAEC72A58E79F0029A940 /* DeleteFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEC62A58E79F0029A940 /* DeleteFriendRequest.swift */; };
+		443CAEEA2A5BEFA10029A940 /* ActualControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEE92A5BEFA10029A940 /* ActualControllerViewController.swift */; };
+		444C053D2A770BD7008B9EAC /* SpotifyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C053C2A770BD7008B9EAC /* SpotifyWebViewController.swift */; };
 		44F44CDE29F99DC60046730E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CDD29F99DC60046730E /* AppDelegate.swift */; };
 		44F44CE029F99DC60046730E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CDF29F99DC60046730E /* SceneDelegate.swift */; };
 		44F44CE229F99DC60046730E /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CE129F99DC60046730E /* MainTabBarViewController.swift */; };
@@ -94,6 +96,8 @@
 		443CAEC22A5657960029A940 /* FriendProfPicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfPicRequest.swift; sourceTree = "<group>"; };
 		443CAEC42A565E1B0029A940 /* FriendProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileService.swift; sourceTree = "<group>"; };
 		443CAEC62A58E79F0029A940 /* DeleteFriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFriendRequest.swift; sourceTree = "<group>"; };
+		443CAEE92A5BEFA10029A940 /* ActualControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualControllerViewController.swift; sourceTree = "<group>"; };
+		444C053C2A770BD7008B9EAC /* SpotifyWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyWebViewController.swift; sourceTree = "<group>"; };
 		44F44CDA29F99DC60046730E /* Main1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F44CDD29F99DC60046730E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44F44CDF29F99DC60046730E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,8 +198,10 @@
 				44F44D182A0195B50046730E /* ForgotPasswordViewController.swift */,
 				44F44D222A031A940046730E /* WebViewerController.swift */,
 				443CAE9A2A3917D50029A940 /* ConnectionsViewController.swift */,
+				444C053C2A770BD7008B9EAC /* SpotifyWebViewController.swift */,
 				443CAE9E2A412AFB0029A940 /* TrialProfileViewController.swift */,
 				443CAEAE2A46534A0029A940 /* AdminViewController.swift */,
+				443CAEE92A5BEFA10029A940 /* ActualControllerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 				443CAE9F2A412AFB0029A940 /* TrialProfileViewController.swift in Sources */,
 				44F44CF929F9A1C50046730E /* CameraViewController.swift in Sources */,
 				443CAE8B2A37EBB10029A940 /* Constants.swift in Sources */,
+				444C053D2A770BD7008B9EAC /* SpotifyWebViewController.swift in Sources */,
 				443CAE992A38BFFC0029A940 /* SignInUserRequest.swift in Sources */,
 				44F44CDE29F99DC60046730E /* AppDelegate.swift in Sources */,
 				443CAE8F2A37EF4A0029A940 /* RegisterUserRequest.swift in Sources */,
@@ -366,6 +373,7 @@
 				44F44D0629FB20C00046730E /* SettingsViewController.swift in Sources */,
 				443CAEB92A4A89C70029A940 /* FriendRequestArray.swift in Sources */,
 				443CAE8D2A37ED2F0029A940 /* HTTP.swift in Sources */,
+				443CAEEA2A5BEFA10029A940 /* ActualControllerViewController.swift in Sources */,
 				443CAE9D2A40C6B10029A940 /* SendDataRequest.swift in Sources */,
 				44F44D0C29FC512A0046730E /* MainImageTableViewCell.swift in Sources */,
 				44F44D232A031A940046730E /* WebViewerController.swift in Sources */,
@@ -436,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -490,7 +498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

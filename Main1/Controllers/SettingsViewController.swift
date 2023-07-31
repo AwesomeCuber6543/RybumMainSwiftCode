@@ -151,7 +151,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 //            print("hi")
 //        }
         if(indexPath.section == 0 && indexPath.row == 1) {
-            let svc = ConnectionsViewController()
+            let svc = ShaftyViewController()
             //present(svc, animated: true, completion: nil)
             self.navigationController?.pushViewController(svc, animated: true)
         }

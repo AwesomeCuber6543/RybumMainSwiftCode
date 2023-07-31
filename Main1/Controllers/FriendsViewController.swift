@@ -46,7 +46,7 @@ class FriendsViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
         self.updateFriendsList()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.updateFriendsProfList()
         }
         
