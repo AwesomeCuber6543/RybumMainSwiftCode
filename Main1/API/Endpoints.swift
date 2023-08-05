@@ -25,6 +25,13 @@ enum Endpoint {
     case getImageFromUsername(path: String = "/data/get-imagefromusername", userRequest: FriendProfPicRequest)
     case deleteFriend(path: String = "/data/delete-friend", userRequest: DeleteFriendRequest)
     
+    case saveAccessToken(path: String = "/data/set-accesstoken", userRequest: SaveAccessTokenRequest)
+    case saveRefreshToken(path: String = "/data/set-refreshtoken", userRequest: SaveRefreshTokenRequest)
+    case getAccessToken(path: String = "/data/get-accesstoken")
+    case getRefreshToken(path: String = "/data/get-refreshtoken")
+    case updateAccessToken(path: String = "/data/update-accesstoken", userRequest: SaveAccessTokenRequest)
+    case updateRefreshToken(path: String = "/data/update-refreshtoken", userRequest: SaveRefreshTokenRequest)
+    
     var request: URLRequest? {
         guard let url = self.url else {return nil}
         
@@ -59,7 +66,13 @@ enum Endpoint {
                 .getFriendRequests(let path),
                 .getFriends(let path),
                 .getImageFromUsername(let path, _),
-                .deleteFriend(let path, _):
+                .deleteFriend(let path, _),
+                .getAccessToken(let path),
+                .getRefreshToken(let path),
+                .saveAccessToken(let path, _),
+                .saveRefreshToken(let path, _),
+                .updateRefreshToken(let path, _),
+                .updateAccessToken(let path, _):
             return path
         }
     }
@@ -73,14 +86,20 @@ enum Endpoint {
                 .setImage,
                 .requestFriend,
                 .getImageFromUsername,
-                .deleteFriend:
+                .deleteFriend,
+                .saveAccessToken,
+                .saveRefreshToken,
+                .updateAccessToken,
+                .updateRefreshToken:
             return HTTP.Method.post.rawValue
         case .getData,
                 .getImage,
                 .getUsername,
                 .getEmail,
                 .getFriendRequests,
-                .getFriends:
+                .getFriends,
+                .getAccessToken,
+                .getRefreshToken:
             return HTTP.Method.get.rawValue
         }
     }
@@ -117,6 +136,18 @@ enum Endpoint {
             return nil
         case .getFriends:
             return nil
+        case .getAccessToken:
+            return nil
+        case .getRefreshToken:
+            return nil
+        case .saveAccessToken(_, let userRequest):
+            return try? JSONEncoder().encode(userRequest)
+        case .saveRefreshToken(_, let userRequest):
+            return try? JSONEncoder().encode(userRequest)
+        case .updateAccessToken(_, let userRequest):
+            return try? JSONEncoder().encode(userRequest)
+        case .updateRefreshToken(_, let userRequest):
+            return try? JSONEncoder().encode(userRequest)
         }
     
         
@@ -139,7 +170,13 @@ extension URLRequest {
                 .getFriendRequests,
                 .getFriends,
                 .getImageFromUsername,
-                .deleteFriend:
+                .deleteFriend,
+                .getAccessToken,
+                .getRefreshToken,
+                .saveAccessToken,
+                .saveRefreshToken,
+                .updateAccessToken,
+                .updateRefreshToken:
             self.setValue(HTTP.Headers.Value.applicationJson.rawValue, forHTTPHeaderField: HTTP.Headers.Key.contentType.rawValue)
         }
         

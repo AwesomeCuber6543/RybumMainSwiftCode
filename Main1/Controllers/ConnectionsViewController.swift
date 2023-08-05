@@ -113,9 +113,10 @@ class ShaftyViewController: UIViewController {
 //        fetchRecentlyPlayedSong(accessToken: getAccessToken()!)
 //    }
     
-    func downloadFileFromURL(url: URL){
+    func downloadFileFromURL(url: String){
+        let finalUrl = URL(string: url)
         var downloadTask = URLSessionDownloadTask()
-        downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: {
+        downloadTask = URLSession.shared.downloadTask(with: finalUrl!, completionHandler: {
             customURL, response, error in
 
             self.play(url: customURL!)
@@ -143,22 +144,15 @@ class ShaftyViewController: UIViewController {
     
     @objc func displayDataButtonTapped() {
         fetchRecentlyPlayedSong { trackPreviewURL in
-            if let previewURL = trackPreviewURL {
+            if let previewURLString = trackPreviewURL {
                 // Play the preview URL
-                print(previewURL)
+                print(previewURLString.count)
 //                self.playPreview(previewURL: previewURL)
-                self.downloadFileFromURL(url: previewURL)
+                self.downloadFileFromURL(url: previewURLString)
             } else {
                 print("Failed to retrieve the track preview URL")
             }
         }
-//        fetchRecentlyPlayedSong { [weak self] (trackURI) in
-//                if let trackURI = trackURI {
-//                    self?.playPreview(trackURI: trackURI)
-//                } else {
-//                    print("Failed to retrieve track URI")
-//                }
-//            }
     }
     
     @objc func didTapRefreshAccessToken() {
@@ -301,8 +295,8 @@ extension ShaftyViewController {
                        let refreshToken = json["refresh_token"] as? String,
                        let expiresIn = json["expires_in"] as? Int{
                         // Handle the access token
-                        print("Access token: \(accessToken)")
-                        print("refresh token: \(refreshToken)")
+                        print("Access token: \(accessToken.count)")
+                        print("refresh token: \(refreshToken.count)")
                         print("refresh token type: \(type(of: refreshToken))")
                         print("THIS IS HOW LONG: \(expiresIn)")
                         
@@ -324,7 +318,7 @@ extension ShaftyViewController {
     }
     
     // Function to fetch the most recently played song
-    func fetchRecentlyPlayedSong(completion: @escaping (URL?) -> Void) {
+    func fetchRecentlyPlayedSong(completion: @escaping (String?) -> Void) {
         guard let accessToken = self.getAccessToken() else {
             print("Access token is missing")
             completion(nil)
@@ -387,7 +381,7 @@ extension ShaftyViewController {
                            let trackURIURL = URL(string: trackURI){
                             print(trackName)
                             print("shamz")
-                            completion(previewURL)
+                            completion(previewURLString)
                         } else {
                             print("Failed to retrieve the track preview URL")
                             completion(nil)

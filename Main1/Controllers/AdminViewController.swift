@@ -11,9 +11,15 @@ class AdminViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
     }
     
 
 
+    
+    @objc func didTapResetAlbums(){
+        
+    }
 }

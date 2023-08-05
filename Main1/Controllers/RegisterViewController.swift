@@ -183,6 +183,9 @@ class RegisterViewController: UIViewController {
                         }
                         
                     }
+                    
+                    
+                    
                     if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
                         sceneDelegate.checkAuthentication()
                     }

@@ -16,6 +16,9 @@ class MainTabBarViewController: UITabBarController {
         view.backgroundColor = UIColor(red: 41/255, green: 37/255, blue: 44/255, alpha: 1)
         self.tabBar.tintColor = .white
         self.tabBar.unselectedItemTintColor = .gray
+        self.tabBar.backgroundColor = .black
+        
+//        print(self.tabBar.frame.height)
         //self.tabBar.backgroundColor = .black
         EmailService.getEmail { [weak self] result in
             DispatchQueue.main.async {
@@ -115,5 +118,10 @@ class MainTabBarViewController: UITabBarController {
             
         }
     }
+    
 }
+
+
+
+
 

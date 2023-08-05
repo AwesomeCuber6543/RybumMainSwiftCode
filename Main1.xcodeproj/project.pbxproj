@@ -40,6 +40,12 @@
 		443CAEC72A58E79F0029A940 /* DeleteFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEC62A58E79F0029A940 /* DeleteFriendRequest.swift */; };
 		443CAEEA2A5BEFA10029A940 /* ActualControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CAEE92A5BEFA10029A940 /* ActualControllerViewController.swift */; };
 		444C053D2A770BD7008B9EAC /* SpotifyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C053C2A770BD7008B9EAC /* SpotifyWebViewController.swift */; };
+		444C053F2A7E01B4008B9EAC /* SaveAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C053E2A7E01B4008B9EAC /* SaveAccessTokenRequest.swift */; };
+		444C05412A7E0208008B9EAC /* SaveRefreshTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C05402A7E0208008B9EAC /* SaveRefreshTokenRequest.swift */; };
+		444C05432A7E050E008B9EAC /* AccessTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C05422A7E050E008B9EAC /* AccessTokenService.swift */; };
+		444C05452A7E051D008B9EAC /* RefreshTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C05442A7E051D008B9EAC /* RefreshTokenService.swift */; };
+		444C05472A7E055C008B9EAC /* AccessTokenArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C05462A7E055C008B9EAC /* AccessTokenArray.swift */; };
+		444C05492A7E0567008B9EAC /* RefreshTokenArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C05482A7E0567008B9EAC /* RefreshTokenArray.swift */; };
 		44F44CDE29F99DC60046730E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CDD29F99DC60046730E /* AppDelegate.swift */; };
 		44F44CE029F99DC60046730E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CDF29F99DC60046730E /* SceneDelegate.swift */; };
 		44F44CE229F99DC60046730E /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F44CE129F99DC60046730E /* MainTabBarViewController.swift */; };
@@ -98,6 +104,12 @@
 		443CAEC62A58E79F0029A940 /* DeleteFriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFriendRequest.swift; sourceTree = "<group>"; };
 		443CAEE92A5BEFA10029A940 /* ActualControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualControllerViewController.swift; sourceTree = "<group>"; };
 		444C053C2A770BD7008B9EAC /* SpotifyWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyWebViewController.swift; sourceTree = "<group>"; };
+		444C053E2A7E01B4008B9EAC /* SaveAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAccessTokenRequest.swift; sourceTree = "<group>"; };
+		444C05402A7E0208008B9EAC /* SaveRefreshTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRefreshTokenRequest.swift; sourceTree = "<group>"; };
+		444C05422A7E050E008B9EAC /* AccessTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenService.swift; sourceTree = "<group>"; };
+		444C05442A7E051D008B9EAC /* RefreshTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenService.swift; sourceTree = "<group>"; };
+		444C05462A7E055C008B9EAC /* AccessTokenArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenArray.swift; sourceTree = "<group>"; };
+		444C05482A7E0567008B9EAC /* RefreshTokenArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenArray.swift; sourceTree = "<group>"; };
 		44F44CDA29F99DC60046730E /* Main1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F44CDD29F99DC60046730E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44F44CDF29F99DC60046730E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +160,8 @@
 				443CAEB62A4A898A0029A940 /* FriendRequestService.swift */,
 				443CAEBA2A54E1FE0029A940 /* FriendsService.swift */,
 				443CAEC42A565E1B0029A940 /* FriendProfileService.swift */,
+				444C05422A7E050E008B9EAC /* AccessTokenService.swift */,
+				444C05442A7E051D008B9EAC /* RefreshTokenService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -210,9 +224,9 @@
 			isa = PBXGroup;
 			children = (
 				44F44CFF29F9D3B10046730E /* CollectionViewTableViewCell.swift */,
+				443CAEBE2A5610250029A940 /* FriendsTableViewCell.swift */,
 				44F44D0729FB266D0046730E /* SettingsTableViewCell.swift */,
 				44F44D0B29FC512A0046730E /* MainImageTableViewCell.swift */,
-				443CAEBE2A5610250029A940 /* FriendsTableViewCell.swift */,
 				44F44D1C2A0197430046730E /* AuthHeaderView.swift */,
 				44F44D1E2A01AE460046730E /* CustomTextField.swift */,
 				44F44D202A021DA20046730E /* CustomButton.swift */,
@@ -229,6 +243,8 @@
 				443CAEC22A5657960029A940 /* FriendProfPicRequest.swift */,
 				443CAE982A38BFFC0029A940 /* SignInUserRequest.swift */,
 				443CAE9C2A40C6B10029A940 /* SendDataRequest.swift */,
+				444C053E2A7E01B4008B9EAC /* SaveAccessTokenRequest.swift */,
+				444C05402A7E0208008B9EAC /* SaveRefreshTokenRequest.swift */,
 				443CAEA42A43AF300029A940 /* SendProfilePicRequest.swift */,
 				443CAE902A37F0590029A940 /* ServerResponses.swift */,
 				443CAE962A38B5AE0029A940 /* DataArray.swift */,
@@ -238,6 +254,8 @@
 				443CAEB82A4A89C70029A940 /* FriendRequestArray.swift */,
 				443CAEAC2A4651D50029A940 /* IsAdmin.swift */,
 				443CAEBC2A54E2200029A940 /* FriendsArray.swift */,
+				444C05462A7E055C008B9EAC /* AccessTokenArray.swift */,
+				444C05482A7E0567008B9EAC /* RefreshTokenArray.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,6 +360,8 @@
 				443CAE8F2A37EF4A0029A940 /* RegisterUserRequest.swift in Sources */,
 				44F44D1D2A0197430046730E /* AuthHeaderView.swift in Sources */,
 				443CAEA12A42B59E0029A940 /* ImageService.swift in Sources */,
+				444C053F2A7E01B4008B9EAC /* SaveAccessTokenRequest.swift in Sources */,
+				444C05472A7E055C008B9EAC /* AccessTokenArray.swift in Sources */,
 				44F44D1B2A0195CC0046730E /* HomeLoginViewController.swift in Sources */,
 				443CAEAB2A45626E0029A940 /* UsernameService.swift in Sources */,
 				443CAEC52A565E1B0029A940 /* FriendProfileService.swift in Sources */,
@@ -350,7 +370,9 @@
 				443CAEAD2A4651D50029A940 /* IsAdmin.swift in Sources */,
 				443CAE892A37EB6D0029A940 /* Endpoints.swift in Sources */,
 				443CAE912A37F0590029A940 /* ServerResponses.swift in Sources */,
+				444C05492A7E0567008B9EAC /* RefreshTokenArray.swift in Sources */,
 				443CAEB72A4A898A0029A940 /* FriendRequestService.swift in Sources */,
+				444C05412A7E0208008B9EAC /* SaveRefreshTokenRequest.swift in Sources */,
 				44F44D1F2A01AE460046730E /* CustomTextField.swift in Sources */,
 				443CAEBD2A54E2200029A940 /* FriendsArray.swift in Sources */,
 				443CAE952A38B5400029A940 /* DataService.swift in Sources */,
@@ -361,6 +383,7 @@
 				44F44D252A1AD7440046730E /* AlertManager.swift in Sources */,
 				44F44D192A0195B50046730E /* ForgotPasswordViewController.swift in Sources */,
 				44F44D0829FB266D0046730E /* SettingsTableViewCell.swift in Sources */,
+				444C05432A7E050E008B9EAC /* AccessTokenService.swift in Sources */,
 				443CAEAF2A46534A0029A940 /* AdminViewController.swift in Sources */,
 				443CAEA32A439A7C0029A940 /* ProfilePicsArray.swift in Sources */,
 				443CAEC32A5657960029A940 /* FriendProfPicRequest.swift in Sources */,
@@ -368,6 +391,7 @@
 				443CAEBB2A54E1FE0029A940 /* FriendsService.swift in Sources */,
 				443CAEA92A4561FA0029A940 /* UsernameArray.swift in Sources */,
 				443CAE932A38AE2D0029A940 /* AuthService.swift in Sources */,
+				444C05452A7E051D008B9EAC /* RefreshTokenService.swift in Sources */,
 				44F44D172A0195A50046730E /* RegisterViewController.swift in Sources */,
 				443CAEA52A43AF300029A940 /* SendProfilePicRequest.swift in Sources */,
 				44F44D0629FB20C00046730E /* SettingsViewController.swift in Sources */,

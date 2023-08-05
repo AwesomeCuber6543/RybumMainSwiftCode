@@ -18,21 +18,22 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 41/255, green: 37/255, blue: 44/255, alpha: 1)
+        homeFeedTable.frame = view.bounds
         view.addSubview(homeFeedTable)
         
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
-//        homeFeedTable.backgroundColor = UIColor(red: 41/255, green: 37/255, blue: 44/255, alpha: 1)
+        homeFeedTable.backgroundColor = UIColor(red: 41/255, green: 37/255, blue: 44/255, alpha: 1)
         
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
     
-    private func setupUI() {
-        
-    }
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//    }
+    
+
     
     
     
@@ -46,7 +47,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -64,7 +65,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 400
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
