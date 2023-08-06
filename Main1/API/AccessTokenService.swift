@@ -13,7 +13,7 @@ class AccessTokenService {
         guard let request = Endpoint.getAccessToken().request else { return }
         
         URLSession.shared.dataTask(with: request) { data, _, error in
-            guard let accessToken = data else {
+            guard let accesstoken = data else {
                 if let error = error {
                     completion(.failure(ServiceError.serverError(error.localizedDescription)))
                 } else {
@@ -25,11 +25,11 @@ class AccessTokenService {
             
             let decoder = JSONDecoder()
             
-            if let array = try? decoder.decode(AccessTokenArray.self, from: accessToken) {
+            if let array = try? decoder.decode(AccessTokenArray.self, from: accesstoken) {
                 completion(.success(array))
                 return
             }
-            else if let errorMessage = try? decoder.decode(ErrorResponse.self, from: accessToken) {
+            else if let errorMessage = try? decoder.decode(ErrorResponse.self, from: accesstoken) {
                 completion(.failure(ServiceError.serverError(errorMessage.error)))
                 return
             }

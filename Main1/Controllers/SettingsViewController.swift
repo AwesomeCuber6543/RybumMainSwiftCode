@@ -34,6 +34,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         table.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
         table.backgroundColor = UIColor(red: 41/255, green: 37/255, blue: 44/255, alpha: 1)
         table.tintColor = UIColor(red: 41/255, green: 37/255, blue: 44/255, alpha: 1)
+        table.isScrollEnabled = false
         return table
     }()
     private let forgotPasswordButton = CustomButton(title: "Forgot Password?", fontsize: .small, buttonColor: .systemBackground, titleColor: UIColor(red: 255/255, green: 65/255, blue: 54/255, alpha: 1))

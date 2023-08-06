@@ -8,5 +8,5 @@
 import Foundation
 
 struct SaveRefreshTokenRequest : Codable {
-    let refreshToken: String
+    let refreshtoken: String
 }

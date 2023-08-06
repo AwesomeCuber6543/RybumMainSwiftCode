@@ -32,6 +32,9 @@ enum Endpoint {
     case updateAccessToken(path: String = "/data/update-accesstoken", userRequest: SaveAccessTokenRequest)
     case updateRefreshToken(path: String = "/data/update-refreshtoken", userRequest: SaveRefreshTokenRequest)
     
+    case deleteAccessToken(path: String = "/data/delete-accesstoken")
+    case deleteRefreshToken(path: String = "/data/delete-refreshtoken")
+    
     var request: URLRequest? {
         guard let url = self.url else {return nil}
         
@@ -72,7 +75,9 @@ enum Endpoint {
                 .saveAccessToken(let path, _),
                 .saveRefreshToken(let path, _),
                 .updateRefreshToken(let path, _),
-                .updateAccessToken(let path, _):
+                .updateAccessToken(let path, _),
+                .deleteAccessToken(let path),
+                .deleteRefreshToken(let path):
             return path
         }
     }
@@ -90,7 +95,9 @@ enum Endpoint {
                 .saveAccessToken,
                 .saveRefreshToken,
                 .updateAccessToken,
-                .updateRefreshToken:
+                .updateRefreshToken,
+                .deleteAccessToken,
+                .deleteRefreshToken:
             return HTTP.Method.post.rawValue
         case .getData,
                 .getImage,
@@ -148,6 +155,10 @@ enum Endpoint {
             return try? JSONEncoder().encode(userRequest)
         case .updateRefreshToken(_, let userRequest):
             return try? JSONEncoder().encode(userRequest)
+        case .deleteAccessToken:
+            return nil
+        case .deleteRefreshToken:
+            return nil
         }
     
         
@@ -176,7 +187,9 @@ extension URLRequest {
                 .saveAccessToken,
                 .saveRefreshToken,
                 .updateAccessToken,
-                .updateRefreshToken:
+                .updateRefreshToken,
+                .deleteAccessToken,
+                .deleteRefreshToken:
             self.setValue(HTTP.Headers.Value.applicationJson.rawValue, forHTTPHeaderField: HTTP.Headers.Key.contentType.rawValue)
         }
         

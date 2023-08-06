@@ -8,5 +8,5 @@
 import Foundation
 
 struct SaveAccessTokenRequest : Codable {
-    let accessToken: String
+    let accesstoken: String
 }
