@@ -95,9 +95,9 @@ class ShaftyViewController: UIViewController {
         displayDataButton.frame = CGRect(x: centerX - buttonWidth/2, y: centerY + buttonSpacing, width: buttonWidth, height: buttonHeight)
     }
     
-    @objc private func backButtonTapped(){
-        self.navigationController?.popViewController(animated: true)
-    }
+//    @objc private func backButtonTapped(){
+//        self.navigationController?.popViewController(animated: true)
+//    }
     
     
     private func setupUI() {
@@ -169,12 +169,6 @@ class ShaftyViewController: UIViewController {
         webViewController.delegate = self
         self.webViewController = webViewController
         present(webViewController, animated: true, completion: nil)
-        
-        
-//        let webViewController = WebViewController()
-        //        webViewContainer = webViewController
-        //        webViewController.delegate = self
-        //        present(webViewController, animated: true, completion: nil)
     }
     
     @objc func signOutButtonTapped() {
@@ -272,11 +266,8 @@ class ShaftyViewController: UIViewController {
     }
     
     @objc func displayDataButtonTapped() {
-        fetchRecentlyPlayedSong { trackPreviewURL in
+        self.fetchRecentlyPlayedSong { trackPreviewURL in
             if let previewURLString = trackPreviewURL {
-                // Play the preview URL
-                print(previewURLString.count)
-//                self.playPreview(previewURL: previewURL)
                 self.downloadFileFromURL(url: previewURLString)
             } else {
                 print("Failed to retrieve the track preview URL")
@@ -542,6 +533,7 @@ extension ShaftyViewController {
                             .decodingError(let string):
                         AlertManager.showRandomAlert(on: self, error: string)
                     }
+                    completion(nil)
                 }
                 
             }
